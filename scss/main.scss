@@ -198,4 +198,7 @@ nav {
     opacity: 1;
     background: rgba(#0e0d0e, 0.75);
   }
+  &:not(.post--active) {
+    pointer-events: none;
+  }
 }
