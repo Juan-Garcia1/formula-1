@@ -10,9 +10,12 @@ let progressInterval = setInterval(progress, 100); // 180
 
 function progress() {
   if (i === 100) {
-    i = 0;
-    // reset the current post progress bar width back to 0
-    currentPost.querySelector(".post__progress-bar").style.width = 0;
+    i = -5;
+    // reset progress bar
+    currentPost.querySelector(".progress-bar__fill").style.width = 0;
+    document.querySelector(
+      ".progress-bar--primary .progress-bar__fill"
+    ).style.width = 0;
     currentPost.classList.remove("post--active");
 
     postIndex++;
@@ -29,7 +32,10 @@ function progress() {
     currentMainPost = mainPosts[postIndex];
   } else {
     i++;
-    currentPost.querySelector(".post__progress-bar").style.width = `${i}%`;
+    currentPost.querySelector(".progress-bar__fill").style.width = `${i}%`;
+    document.querySelector(
+      ".progress-bar--primary .progress-bar__fill"
+    ).style.width = `${i}%`;
     currentPost.classList.add("post--active");
 
     currentMainPost.classList.add("main-post--active");
