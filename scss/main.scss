@@ -87,25 +87,26 @@ nav {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.9em;
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      margin-left: 20px;
-      width: 50%;
-      height: 1px;
-      background: #fff;
+    display: inline-flex;
+    align-items: center;
+    &-text {
+      font-size: 0.9em;
     }
-    &:hover {
-      color: #c20000;
-      &::after {
-        background: #c20000;
+    &-icon {
+      &--arrow {
+        margin-left: 12px;
+      }
+      &--play-btn {
+        margin-right: 12px;
       }
     }
   }
+}
+
+.main-post__link:hover .main-post__link-text,
+.main-post__link:hover .main-post__link-icon--arrow path {
+  color: #c20000;
+  stroke: #c20000;
 }
 
 .main-post--active {
